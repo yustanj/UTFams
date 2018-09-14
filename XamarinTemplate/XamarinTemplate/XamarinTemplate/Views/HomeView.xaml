@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:carousel="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:local="clr-namespace:XamarinTemplate.Views"
+             x:Class="XamarinTemplate.Views.HomeView">
+    <ContentView.Content>
+        <ScrollView>
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3.5*"/>
+                    <RowDefinition Height="5.5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <carousel:CarouselView x:Name="SlideShowImages">
+                        <carousel:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}"/>
+                            </DataTemplate>
+                        </carousel:CarouselView.ItemTemplate>
+                    </carousel:CarouselView>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="7*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Row="0" BackgroundColor="White">
+                        <Label Text="Energy Usage Intensity" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource DefaultColor}"/>
+                        <Label Text="63%" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+
+                        <Frame BorderColor="{StaticResource BorderColor}" VerticalOptions="FillAndExpand" HorizontalOptions="Center" Margin="30,0,30,0">
+                            <StackLayout x:Name="EnergyUsage" VerticalOptions="FillAndExpand"/>
+                        </Frame>
+                        <Label Text="Normal" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="Green"/>
+
+                    </StackLayout>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" BackgroundColor="White">
+                            <Label Text="Energy Consumptions" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource DefaultColor}"/>
+                            <forms:ChartView x:Name="EnergyConsumptions" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" BackgroundColor="White">
+                            <Label Text="Water Consumptions" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource DefaultColor}"/>
+                            <forms:ChartView x:Name="WaterConsumptions" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackLayout BackgroundColor="White">
+                        <Label Text="Energy Savings" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource DefaultColor}"/>
+                        <Label HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="23%" FontSize="Medium"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XamarinTemplate.ViewModels"
+             x:Class="XamarinTemplate.Views.LoginPage"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <StackLayout VerticalOptions="CenterAndExpand" Margin="20" Spacing="10">
+                    <Image Source="ClientLogo.png" WidthRequest="100" HeightRequest="75"/>
+                    <StackLayout>
+                        <Frame BackgroundColor="WhiteSmoke" HorizontalOptions="FillAndExpand" HeightRequest="30" CornerRadius="50">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <Image Source="ic_action_email.png"/>
+                                <Entry Placeholder="Email" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame BackgroundColor="WhiteSmoke" HorizontalOptions="FillAndExpand" HeightRequest="30" CornerRadius="50">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <Image Source="ic_action_password.png"/>
+                                <Entry Placeholder="Password" HorizontalOptions="FillAndExpand" IsPassword="True"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    <Button HorizontalOptions="Center" Text="Login" Command="{Binding Login}" WidthRequest="100" CornerRadius="50"/>
+                    <StackLayout>
+                        <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="Not a Member?"/>
+                        <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="Register">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Register}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="or"/>
+                        <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="Forgot Password">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPassword}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

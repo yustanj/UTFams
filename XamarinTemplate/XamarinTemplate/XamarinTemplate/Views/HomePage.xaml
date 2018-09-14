@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinTemplate.Views"
+             xmlns:vm="clr-namespace:XamarinTemplate.ViewModels"
+             x:Class="XamarinTemplate.Views.HomePage">
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid x:Name="Contents" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Orientation="Horizontal" BackgroundColor="White">
+                <Image Source="ClientLogo.png" HorizontalOptions="StartAndExpand" Margin="20,5,0,5"/>
+                <Image Source="icon_small.png" HorizontalOptions="EndAndExpand" Margin="0,5,10,5"/>
+            </StackLayout>
+            <Grid x:Name="MainContent" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="5"/>
+            <Grid Grid.Row="2" RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="Home" Grid.Column="0" RowSpacing="0" BackgroundColor="{StaticResource DefaultColor}">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Home_Tapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image Grid.Row="0" Source="ic_action_home" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,5,0,0"/>
+                    <Label Grid.Row="1" Text="Home" FontSize="Micro" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="Ticket" Grid.Column="1" RowSpacing="0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Ticket_Tapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image Grid.Row="0" Source="ic_action_ticketcr" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,5,0,0"/>
+                    <Label Grid.Row="1" Text="Ticket" FontSize="Micro" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="RegularMT" Grid.Column="2" RowSpacing="0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RegularMT_Tapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image Grid.Row="0" Source="ic_action_regularmt" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,5,0,0"/>
+                    <Label Grid.Row="1" Text="Regular M/T" FontSize="Micro" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="Inbox" Grid.Column="3" RowSpacing="0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Inbox_Tapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image Grid.Row="0" Source="ic_action_inbox" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,5,0,0"/>
+                    <Label Grid.Row="1" Text="Inbox" FontSize="Micro" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="Profil" Grid.Column="4" RowSpacing="0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Profil_Tapped"/>
+                    </Grid.GestureRecognizers>
+                    <Image Grid.Row="0" Source="ic_action_profil" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,5,0,0"/>
+                    <Label Grid.Row="1" Text="Profil" FontSize="Micro" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
